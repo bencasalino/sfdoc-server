@@ -1,0 +1,16 @@
+{
+  "name": "sfdoc-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Ben Casalino",
+  "license": "ISC",
+  "dependencies": {
+    "knex": "^0.14.2",
+    "pg": "^7.4.1",
+    "psql": "0.0.1"
+  }
+}
