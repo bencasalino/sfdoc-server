@@ -8,6 +8,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+
+// this displays both tables 
 app.get("/", (request, response) => {
   queries
     .list("indoor")
@@ -21,28 +23,31 @@ app.get("/", (request, response) => {
     )
     .catch(console.error);
 });
-
+// 
 app.get("/indoor", (request, response) => {
   queries
     .list("indoor")
-    .then(indoor => {
-      response.json({ indoor });
+    .then(db_sfdoc => {
+      response.json({ db_sfdoc });
     })
     .catch(console.error);
 });
-
+//
 app.get("/outdoor", (request, response) => {
   queries
     .list("outdoor")
-    .then(outdoor => {
-      response.json({ outdoor });
+    .then(db_sfdoc => {
+      response.json({ db_sfdoc });
     })
     .catch(console.error);
 });
 
+
+
+
 app.get("/indoor/:id", (request, response) => {
   queries
-    .read("indoor", request.params.id)
+    .read(request.params.id, "indoor")
     .then(indoor => {
       indoor ? response.json({ indoor }) : response.sendStatus(404);
     })
@@ -51,7 +56,7 @@ app.get("/indoor/:id", (request, response) => {
 
 app.get("/outdoor/:id", (request, response) => {
   queries
-    .read("outdoor", request.params.id)
+    .read(request.params.id, "outdoor")
     .then(outdoor => {
       outdoor ? response.json({ outdoor }) : response.sendStatus(404);
     })
@@ -60,25 +65,25 @@ app.get("/outdoor/:id", (request, response) => {
 
 app.post("/indoor", (request, response) => {
   queries
-    .create("indoor", request.body)
+    .create(request.body, "indoor")
     .then(indoor => {
-      response.status(201).json({ data: indoor });
+      response.status(201).json({ indoor });
     })
     .catch(console.error);
 });
 
 app.post("/outdoor", (request, response) => {
   queries
-    .create("outdoor", request.body)
+    .create(request.body, "outdoor")
     .then(outdoor => {
-      response.status(201).json({ data: outdoor });
+      response.status(201).json({ outdoor });
     })
     .catch(console.error);
 });
 
 app.delete("/indoor/:id", (request, response) => {
   queries
-    .delete("indoor", request.params.id)
+    .delete(request.params.id, "indoor")
     .then(() => {
       response.sendStatus(204);
     })
@@ -87,7 +92,7 @@ app.delete("/indoor/:id", (request, response) => {
 
 app.delete("/outdoor/:id", (request, response) => {
   queries
-    .delete("outdoor", request.params.id)
+    .delete(request.params.id, "outdoor")
     .then(() => {
       response.sendStatus(204);
     })
@@ -96,18 +101,18 @@ app.delete("/outdoor/:id", (request, response) => {
 
 app.put("/indoor/:id", (request, response) => {
   queries
-    .update("indoor", request.params.id, request.body)
+    .update(request.params.id, request.body, "indoor")
     .then(indoor => {
-      response.json({ data: indoor[0] });
+      response.json({ indoor });
     })
     .catch(console.error);
 });
 
 app.put("/outdoor/:id", (request, response) => {
   queries
-    .update("outdoor", request.params.id, request.body)
+    .update(request.params.id, request.body, "outdoor")
     .then(outdoor => {
-      response.json({ data: outdoor[0] });
+      response.json({ outdoor });
     })
     .catch(console.error);
 });
@@ -117,8 +122,3 @@ app.use((request, response) => {
 });
 
 module.exports = app;
-
-
-
-
-
