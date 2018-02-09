@@ -12,7 +12,8 @@ exports.seed = function(knex, Promise) {
           fields: 2,
           url: "http://boulderindoorsoccer.com/",
           latitude: 40.195976,
-          longitude: -105.122658
+          longitude: -105.122658,
+          fieldType: true
         },
         {
           id: 2,
@@ -21,7 +22,8 @@ exports.seed = function(knex, Promise) {
           fields: 5,
           url: "http://www.letsplaysoccer.com/facilities/5",
           latitude: 12.0,
-          longitude: -42.22
+          longitude: -42.22,
+          fieldType: true
         }
       ]);
     });

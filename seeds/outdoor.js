@@ -12,7 +12,8 @@ exports.seed = function(knex, Promise) {
           fields: 1,
           url: "http://google.com/",
           latitude: 55.22,
-          longitude: -33.33
+          longitude: -33.33,
+          fieldType: false
         },
         {
           id: 2,
@@ -21,7 +22,8 @@ exports.seed = function(knex, Promise) {
           fields: 2,
           url: "http://www.soccer.com/",
           latitude: 23.0,
-          longitude: -55.22
+          longitude: -55.22,
+          fieldType: false
         }
       ]);
     });
