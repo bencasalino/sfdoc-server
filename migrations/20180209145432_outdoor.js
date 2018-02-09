@@ -7,6 +7,7 @@ exports.up = function(knex, Promise) {
     table.string("url");
     table.float("latitude");
     table.float("longitude");
+    table.boolean("fieldType");
   });
 };
 
