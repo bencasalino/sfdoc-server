@@ -1,23 +1,23 @@
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex("outdoor")
+  return knex("indoor")
     .del()
     .then(function() {
       // Inserts seed entries
-      return knex("outdoor").insert([
+      return knex("indoor").insert([
         {
-          name: "Boulder High",
-          city: "Boulder",
+          name: "Denver Dome",
+          city: "Denver",
           fields: 1,
           latitude: 55.22,
-          longitude: -33.33
+          longitude: -33.33,
         },
         {
-          name: "Denver High ",
-          city: "Wash Park",
+          name: "Denver Arena",
+          city: "Cherry Creek",
           fields: 2,
           latitude: 23.0,
-          longitude: -55.22
+          longitude: -55.22,
         }
       ]);
     });
