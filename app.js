@@ -23,7 +23,7 @@ app.get("/", (request, response) => {
     )
     .catch(console.error);
 });
-// 
+// shows the indoor table 
 app.get("/indoor", (request, response) => {
   queries
     .list("indoor")
@@ -32,7 +32,7 @@ app.get("/indoor", (request, response) => {
     })
     .catch(console.error);
 });
-//
+// shows the outdoor table 
 app.get("/outdoor", (request, response) => {
   queries
     .list("outdoor")
@@ -44,25 +44,27 @@ app.get("/outdoor", (request, response) => {
 
 
 
-
-app.get("/indoor/:id", (request, response) => {
+// gets the indoor table by name 
+app.get("/indoor/:name", (request, response) => {
   queries
-    .read(request.params.id, "indoor")
+    .read(request.params.name, "indoor")
     .then(indoor => {
       indoor ? response.json({ indoor }) : response.sendStatus(404);
     })
     .catch(console.error);
 });
 
-app.get("/outdoor/:id", (request, response) => {
+// gets the outdoor table by name 
+app.get("/outdoor/:name", (request, response) => {
   queries
-    .read(request.params.id, "outdoor")
+    .read(request.params.name, "outdoor")
     .then(outdoor => {
       outdoor ? response.json({ outdoor }) : response.sendStatus(404);
     })
     .catch(console.error);
 });
 
+// adds to the indoor table 
 app.post("/indoor", (request, response) => {
   queries
     .create(request.body, "indoor")
@@ -72,6 +74,7 @@ app.post("/indoor", (request, response) => {
     .catch(console.error);
 });
 
+// adds to the outdoor table 
 app.post("/outdoor", (request, response) => {
   queries
     .create(request.body, "outdoor")
@@ -81,25 +84,28 @@ app.post("/outdoor", (request, response) => {
     .catch(console.error);
 });
 
-app.delete("/indoor/:id", (request, response) => {
+// deletes the indoor table by name 
+app.delete("/indoor/:name", (request, response) => {
   queries
-    .delete(request.params.id, "indoor")
+    .delete(request.params.name, "indoor")
     .then(() => {
       response.sendStatus(204);
     })
     .catch(console.error);
 });
 
-app.delete("/outdoor/:id", (request, response) => {
+// deletes the outdoor table by na,e 
+app.delete("/outdoor/:name", (request, response) => {
   queries
-    .delete(request.params.id, "outdoor")
+    .delete(request.params.name, "outdoor")
     .then(() => {
       response.sendStatus(204);
     })
     .catch(console.error);
 });
 
-app.put("/indoor/:id", (request, response) => {
+// updates the indoor table by name
+app.put("/indoor/:name", (request, response) => {
   queries
     .update(request.params.id, request.body, "indoor")
     .then(indoor => {
@@ -107,16 +113,17 @@ app.put("/indoor/:id", (request, response) => {
     })
     .catch(console.error);
 });
-
-app.put("/outdoor/:id", (request, response) => {
+// updates the outdoor table by name
+app.put("/outdoor/:name", (request, response) => {
   queries
-    .update(request.params.id, request.body, "outdoor")
+    .update(request.params.name, request.body, "outdoor")
     .then(outdoor => {
       response.json({ outdoor });
     })
     .catch(console.error);
 });
 
+// invoke everything? 
 app.use((request, response) => {
   response.send(404);
 });
