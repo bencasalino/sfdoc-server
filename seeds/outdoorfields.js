@@ -18,6 +18,20 @@ exports.seed = function(knex, Promise) {
           fields: 10,
           latitude: 23.08,
           longitude: -55.22
+        },
+              {
+          name: "Platte River Park",
+          city: "Highlands",
+          fields: 10,
+          latitude: 23.08,
+          longitude: -55.22
+        },
+              {
+          name: "Cheeseman",
+          city: "Cap Hill",
+          fields: 99,
+          latitude: -99.99,
+          longitude: -22.22
         }
       ]);
     });
