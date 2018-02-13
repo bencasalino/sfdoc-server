@@ -1,10 +1,10 @@
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex("indoor")
+  return knex("indoorfields")
     .del()
     .then(function() {
       // Inserts seed entries
-      return knex("indoor").insert([
+      return knex("indoorfields").insert([
         {
           name: "Da Denver Dome",
           city: "Denver",

@@ -1,5 +1,5 @@
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable("outdoor", table => {
+  return knex.schema.createTable("indoorfields", table => {
     table.text("name");
     table.text("city");
     table.integer("fields");
@@ -9,5 +9,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTableIfExists("outdoor");
+  return knex.schema.dropTableIfExists("indoorfields");
 };

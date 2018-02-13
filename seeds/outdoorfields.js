@@ -1,10 +1,10 @@
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex("outdoor")
+  return knex("outdoorfields")
     .del()
     .then(function() {
       // Inserts seed entries
-      return knex("outdoor").insert([
+      return knex("outdoorfields").insert([
         {
           name: "Boulder High",
           city: "Boulder",

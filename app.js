@@ -12,30 +12,30 @@ app.use(bodyParser.json());
 // this displays both tables 
 app.get("/", (request, response) => {
   queries
-    .list("indoor")
-    .then(indoor =>
-      queries.list("outdoor").then(outdoor =>
+    .list("indoorfields")
+    .then(indoorfields =>
+      queries.list("outdoorfields").then(outdoorfields =>
         response.json({
-          indoor: indoor,
-          outdoor: outdoor
+          indoorfields: indoorfields,
+          outdoorfields: outdoorfields
         })
       )
     )
     .catch(console.error);
 });
-// shows the indoor table 
-app.get("/indoor", (request, response) => {
+// shows the indoorfields table 
+app.get("/indoorfields", (request, response) => {
   queries
-    .list("indoor")
+    .list("indoorfields")
     .then(db_sfdoc => {
       response.json({ db_sfdoc });
     })
     .catch(console.error);
 });
-// shows the outdoor table 
-app.get("/outdoor", (request, response) => {
+// shows the outdoorfields table 
+app.get("/outdoorfields", (request, response) => {
   queries
-    .list("outdoor")
+    .list("outdoorfields")
     .then(db_sfdoc => {
       response.json({ db_sfdoc });
     })
@@ -44,81 +44,81 @@ app.get("/outdoor", (request, response) => {
 
 
 
-// gets the indoor table by name 
-app.get("/indoor/:name", (request, response) => {
+// gets the indoorfields table by name 
+app.get("/indoorfields/:name", (request, response) => {
   queries
-    .read(request.params.name, "indoor")
-    .then(indoor => {
-      indoor ? response.json({ indoor }) : response.sendStatus(404);
+    .read(request.params.name, "indoorfields")
+    .then(indoorfields => {
+      indoorfields ? response.json({ indoorfields }) : response.sendStatus(404);
     })
     .catch(console.error);
 });
 
-// gets the outdoor table by name 
-app.get("/outdoor/:name", (request, response) => {
+// gets the outdoorfields table by name 
+app.get("/outdoorfields/:name", (request, response) => {
   queries
-    .read(request.params.name, "outdoor")
-    .then(outdoor => {
-      outdoor ? response.json({ outdoor }) : response.sendStatus(404);
+    .read(request.params.name, "outdoorfields")
+    .then(outdoorfields => {
+      outdoorfields ? response.json({ outdoorfields }) : response.sendStatus(404);
     })
     .catch(console.error);
 });
 
-// adds to the indoor table 
-app.post("/indoor", (request, response) => {
+// adds to the indoorfields table 
+app.post("/indoorfields", (request, response) => {
   queries
-    .create(request.body, "indoor")
-    .then(indoor => {
-      response.status(201).json({ indoor });
+    .create(request.body, "indoorfields")
+    .then(indoorfields => {
+      response.status(201).json({ indoorfields });
     })
     .catch(console.error);
 });
 
-// adds to the outdoor table 
-app.post("/outdoor", (request, response) => {
+// adds to the outdoorfields table 
+app.post("/outdoorfields", (request, response) => {
   queries
-    .create(request.body, "outdoor")
-    .then(outdoor => {
-      response.status(201).json({ outdoor });
+    .create(request.body, "outdoorfields")
+    .then(outdoorfields => {
+      response.status(201).json({ outdoorfields });
     })
     .catch(console.error);
 });
 
-// deletes the indoor table by name 
-app.delete("/indoor/:name", (request, response) => {
+// deletes the indoorfields table by name 
+app.delete("/indoorfields/:name", (request, response) => {
   queries
-    .delete(request.params.name, "indoor")
+    .delete(request.params.name, "indoorfields")
     .then(() => {
       response.sendStatus(204);
     })
     .catch(console.error);
 });
 
-// deletes the outdoor table by na,e 
-app.delete("/outdoor/:name", (request, response) => {
+// deletes the outdoorfields table by na,e 
+app.delete("/outdoorfields/:name", (request, response) => {
   queries
-    .delete(request.params.name, "outdoor")
+    .delete(request.params.name, "outdoorfields")
     .then(() => {
       response.sendStatus(204);
     })
     .catch(console.error);
 });
 
-// updates the indoor table by name
-app.put("/indoor/:name", (request, response) => {
+// updates the indoorfields table by name
+app.put("/indoorfields/:name", (request, response) => {
   queries
-    .update(request.params.id, request.body, "indoor")
-    .then(indoor => {
-      response.json({ indoor });
+    .update(request.params.id, request.body, "indoorfields")
+    .then(indoorfields => {
+      response.json({ indoorfields });
     })
     .catch(console.error);
 });
-// updates the outdoor table by name
-app.put("/outdoor/:name", (request, response) => {
+// updates the outdoorfields table by name
+app.put("/outdoorfields/:name", (request, response) => {
   queries
-    .update(request.params.name, request.body, "outdoor")
-    .then(outdoor => {
-      response.json({ outdoor });
+    .update(request.params.name, request.body, "outdoorfields")
+    .then(outdoorfields => {
+      response.json({ outdoorfields });
     })
     .catch(console.error);
 });
