@@ -6,7 +6,7 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex("indoorfields").insert([
         {
-          id: 2,
+          id: 1,
           name: "Da Denver Dome",
           city: "Denver",
           fields: 1,
@@ -14,7 +14,7 @@ exports.seed = function(knex, Promise) {
           longitude: -33.33
         },
         {
-          id: 3,
+          id: 2,
           name: "Pepsi Center",
           city: "Lo do",
           fields: 2,
@@ -22,7 +22,7 @@ exports.seed = function(knex, Promise) {
           longitude: -55.22
         },
         {
-          id: 4,
+          id: 3,
           name: "Convention Center",
           city: "Downtown",
           fields: 4,
@@ -30,7 +30,7 @@ exports.seed = function(knex, Promise) {
           longitude: -33.33
         },
         {
-          id: 5,
+          id: 4,
           name: "Rec Center",
           city: "River North",
           fields: 7,
@@ -41,6 +41,6 @@ exports.seed = function(knex, Promise) {
     })
     .then(() => {
       // starts the next index at 4
-      return knex.raw("ALTER SEQUENCE indoorfields_id_seq RESTART WITH 1;");
+      return knex.raw("ALTER SEQUENCE indoorfields_id_seq RESTART WITH 5;");
     });
 };

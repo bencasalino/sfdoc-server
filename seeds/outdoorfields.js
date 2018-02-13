@@ -6,7 +6,7 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex("outdoorfields").insert([
         {
-          id: 1002,
+          id: 1001,
           name: "Boulder High",
           city: "Boulder",
           fields: 4,
@@ -14,7 +14,7 @@ exports.seed = function(knex, Promise) {
           longitude: -13.33
         },
         {
-          id: 1003,
+          id: 1002,
           name: "Denvah High",
           city: "Five Points",
           fields: 10,
@@ -22,7 +22,7 @@ exports.seed = function(knex, Promise) {
           longitude: -55.22
         },
         {
-          id: 1004,
+          id: 1003,
           name: "Platte River Park",
           city: "Highlands",
           fields: 10,
@@ -30,7 +30,7 @@ exports.seed = function(knex, Promise) {
           longitude: -55.22
         },
         {
-          id: 1005,
+          id: 1004,
           name: "Cheeseman",
           city: "Cap Hill",
           fields: 99,
@@ -41,6 +41,6 @@ exports.seed = function(knex, Promise) {
     })
     .then(() => {
       // starts the next index at 4
-      return knex.raw("ALTER SEQUENCE outdoorfields_id_seq RESTART WITH 1000;");
+      return knex.raw("ALTER SEQUENCE outdoorfields_id_seq RESTART WITH 1005;");
     });
 };

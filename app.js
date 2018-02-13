@@ -69,7 +69,7 @@ app.post("/indoorfields", (request, response) => {
   queries
     .create(request.body, "indoorfields")
     .then(indoorfields => {
-      response.status(201).json({ indoorfields });
+      response.status(201).json( indoorfields );
     })
     .catch(console.error);
 });
