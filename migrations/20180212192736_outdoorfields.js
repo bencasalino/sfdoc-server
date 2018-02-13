@@ -1,5 +1,6 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable("outdoorfields", table => {
+    table.increments("id").primary();
     table.text("name");
     table.text("city");
     table.integer("fields");
