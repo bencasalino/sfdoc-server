@@ -8,15 +8,15 @@ exports.seed = function(knex, Promise) {
         {
           name: "Boulder High",
           city: "Boulder",
-          fields: 1,
-          latitude: 55.22,
-          longitude: -33.33
+          fields: 4,
+          latitude: -55.22,
+          longitude: -13.33
         },
         {
-          name: "Denver High ",
-          city: "Wash Park",
-          fields: 2,
-          latitude: 23.0,
+          name: "Denvah High",
+          city: "Five Points",
+          fields: 10,
+          latitude: 23.08,
           longitude: -55.22
         }
       ]);

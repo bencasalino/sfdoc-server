@@ -6,18 +6,18 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex("indoor").insert([
         {
-          name: "Denver Dome",
+          name: "Da Denver Dome",
           city: "Denver",
           fields: 1,
           latitude: 55.22,
-          longitude: -33.33,
+          longitude: -33.33
         },
         {
-          name: "Denver Arena",
-          city: "Cherry Creek",
+          name: "Pepsi Center",
+          city: "Lo do",
           fields: 2,
-          latitude: 23.0,
-          longitude: -55.22,
+          latitude: 23.08,
+          longitude: -55.22
         }
       ]);
     });
