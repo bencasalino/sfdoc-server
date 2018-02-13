@@ -107,7 +107,7 @@ app.delete("/outdoorfields/:name", (request, response) => {
 // updates the indoorfields table by name
 app.put("/indoorfields/:name", (request, response) => {
   queries
-    .update(request.params.id, request.body, "indoorfields")
+    .update(request.params.name, request.body, "indoorfields")
     .then(indoorfields => {
       response.json({ indoorfields });
     })
