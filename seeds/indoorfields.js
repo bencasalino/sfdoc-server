@@ -40,7 +40,7 @@ exports.seed = function(knex, Promise) {
       ]);
     })
     .then(() => {
-      // starts the next index at 4
-      return knex.raw("ALTER SEQUENCE indoorfields_id_seq RESTART WITH 5;");
+      // starts the next index at 5
+      return knex.raw("ALTER SEQUENCE indoorfields_id_seq RESTART WITH 10;");
     });
 };

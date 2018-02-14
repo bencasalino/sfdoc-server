@@ -41,6 +41,6 @@ exports.seed = function(knex, Promise) {
     })
     .then(() => {
       // starts the next index at 4
-      return knex.raw("ALTER SEQUENCE outdoorfields_id_seq RESTART WITH 1005;");
+      return knex.raw("ALTER SEQUENCE outdoorfields_id_seq RESTART WITH 1010;");
     });
 };
