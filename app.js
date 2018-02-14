@@ -66,6 +66,7 @@ app.get("/outdoorfields/:name", (request, response) => {
 
 // adds to the indoorfields table 
 app.post("/indoorfields", (request, response) => {
+  console.log(request.body);
   queries
     .create(request.body, "indoorfields")
     .then(indoorfields => {
