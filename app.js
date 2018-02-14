@@ -128,7 +128,7 @@ app.put("/outdoorfields/:name", (request, response) => {
 
 // invoke everything? 
 app.use((request, response) => {
-  response.send(404);
+  response.sendStatus(404);
 });
 
 module.exports = app;
