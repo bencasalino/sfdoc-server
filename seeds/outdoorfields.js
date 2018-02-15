@@ -6,36 +6,36 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex("outdoorfields").insert([
         {
-          id: 1001,
           name: "Boulder High",
           city: "Boulder",
           fields: 4,
           latitude: -55.22,
-          longitude: -13.33
+          longitude: -13.33,
+          id: 1001
         },
         {
-          id: 1002,
           name: "Denvah High",
           city: "Five Points",
           fields: 10,
           latitude: 23.08,
-          longitude: -55.22
+          longitude: -55.22,
+          id: 1002
         },
         {
-          id: 1003,
           name: "Platte River Park",
           city: "Highlands",
           fields: 10,
           latitude: 23.08,
-          longitude: -55.22
+          longitude: -55.22,
+          id: 1003
         },
         {
-          id: 1004,
           name: "Cheeseman",
           city: "Cap Hill",
           fields: 99,
           latitude: -99.99,
-          longitude: -22.22
+          longitude: -22.22,
+          id: 1004
         }
       ]);
     })

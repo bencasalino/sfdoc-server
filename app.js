@@ -66,9 +66,6 @@ app.get("/outdoorfields/:name", (request, response) => {
 
 // adds to the indoorfields table 
 app.post("/indoorfields", (request, response) => {
-
-  console.log(request.body);
-
   queries
     .create(request.body, "indoorfields")
     .then(indoorfields => {
@@ -97,7 +94,7 @@ app.delete("/indoorfields/:name", (request, response) => {
     .catch(console.error);
 });
 
-// deletes the outdoorfields table by na,e 
+// deletes the outdoorfields table by name 
 app.delete("/outdoorfields/:name", (request, response) => {
   queries
     .delete(request.params.name, "outdoorfields")
