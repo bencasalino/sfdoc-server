@@ -3,8 +3,6 @@ exports.up = function(knex, Promise) {
     table.text("name");
     table.text("city");
     table.integer("fields");
-    table.integer("latitude");
-    table.integer("longitude");
     table.increments("id").primary();
   });
 };

@@ -9,32 +9,24 @@ exports.seed = function(knex, Promise) {
           name: "Boulder High",
           city: "Boulder",
           fields: 4,
-          latitude: -55.22,
-          longitude: -13.33,
           id: 1001
         },
         {
           name: "Denvah High",
           city: "Five Points",
           fields: 10,
-          latitude: 23.08,
-          longitude: -55.22,
           id: 1002
         },
         {
           name: "Platte River Park",
           city: "Highlands",
           fields: 10,
-          latitude: 23.08,
-          longitude: -55.22,
           id: 1003
         },
         {
           name: "Cheeseman",
           city: "Cap Hill",
           fields: 99,
-          latitude: -99.99,
-          longitude: -22.22,
           id: 1004
         }
       ]);
