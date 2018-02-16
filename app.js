@@ -90,16 +90,19 @@ app.delete("/indoorfields/:name", (request, response) => {
     .delete(request.params.name, "indoorfields")
     .then(() => {
       response.sendStatus(204);
+      // response.send({message:"delete worked!"})
     })
     .catch(console.error);
 });
 
 // deletes the outdoorfields table by name 
 app.delete("/outdoorfields/:name", (request, response) => {
+  console.log(request.params.name)
   queries
     .delete(request.params.name, "outdoorfields")
     .then(() => {
       response.sendStatus(204);
+        // response.send({ message: "delete worked!" });
     })
     .catch(console.error);
 });
@@ -123,7 +126,7 @@ app.put("/outdoorfields/:name", (request, response) => {
     .catch(console.error);
 });
 
-// invoke everything? 
+// it hit none of the paths 
 app.use((request, response) => {
   response.sendStatus(404);
 });
