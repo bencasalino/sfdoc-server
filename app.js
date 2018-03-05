@@ -9,7 +9,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 
-// this displays both tables 
+// this displays both tables
 app.get("/", (request, response) => {
   queries
     .list("indoorfields")
@@ -23,7 +23,8 @@ app.get("/", (request, response) => {
     )
     .catch(console.error);
 });
-// shows the indoorfields table 
+
+// shows the indoorfields table
 app.get("/indoorfields", (request, response) => {
   queries
     .list("indoorfields")
@@ -32,7 +33,7 @@ app.get("/indoorfields", (request, response) => {
     })
     .catch(console.error);
 });
-// shows the outdoorfields table 
+// shows the outdoorfields table
 app.get("/outdoorfields", (request, response) => {
   queries
     .list("outdoorfields")
@@ -44,7 +45,7 @@ app.get("/outdoorfields", (request, response) => {
 
 
 
-// gets the indoorfields table by name 
+// gets the indoorfields table by name
 app.get("/indoorfields/:name", (request, response) => {
   queries
     .read(request.params.name, "indoorfields")
@@ -54,7 +55,7 @@ app.get("/indoorfields/:name", (request, response) => {
     .catch(console.error);
 });
 
-// gets the outdoorfields table by name 
+// gets the outdoorfields table by name
 app.get("/outdoorfields/:name", (request, response) => {
   queries
     .read(request.params.name, "outdoorfields")
@@ -64,7 +65,7 @@ app.get("/outdoorfields/:name", (request, response) => {
     .catch(console.error);
 });
 
-// adds to the indoorfields table 
+// adds to the indoorfields table
 app.post("/indoorfields", (request, response) => {
   queries
     .create(request.body, "indoorfields")
@@ -74,7 +75,7 @@ app.post("/indoorfields", (request, response) => {
     .catch(console.error);
 });
 
-// adds to the outdoorfields table 
+// adds to the outdoorfields table
 app.post("/outdoorfields", (request, response) => {
   queries
     .create(request.body, "outdoorfields")
@@ -84,7 +85,7 @@ app.post("/outdoorfields", (request, response) => {
     .catch(console.error);
 });
 
-// deletes the indoorfields table by name 
+// deletes the indoorfields table by name
 app.delete("/indoorfields/:name", (request, response) => {
   queries
     .delete(request.params.name, "indoorfields")
@@ -95,7 +96,7 @@ app.delete("/indoorfields/:name", (request, response) => {
     .catch(console.error);
 });
 
-// deletes the outdoorfields table by name 
+// deletes the outdoorfields table by name
 app.delete("/outdoorfields/:name", (request, response) => {
   console.log(request.params.name)
   queries
@@ -126,7 +127,7 @@ app.put("/outdoorfields/:name", (request, response) => {
     .catch(console.error);
 });
 
-// it hit none of the paths 
+// it hit none of the paths
 app.use((request, response) => {
   response.sendStatus(404);
 });
